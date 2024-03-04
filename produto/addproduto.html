@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: yellowgreen;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: darkgreen;
+            --bs-btn-hover-border-color: darkgreen;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: darkgreen;
+            --bs-btn-active-border-color: black;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+
+        .btn-bd-primary::after {
+            content: none;
+        }
+
+        .navbar-dark {
+            background-color: transparent !important;
+        }
+
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            transition: 0.5s;
+            color: yellowgreen !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+
+        .searchInput {
+            align-items: center;
+            width: 380px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+
+        }
+
+
+        #button-type:hover {
+            transition: background-color 1s;
+            background-color: darkgreen !important;
+            color: white !important;
+        }
+
+        #button-type2:hover {
+            color: darkgreen !important;
+        }
+
+        #button-type2 {
+            font-style: italic;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form {
+            display: flex;
+            position: relative;
+        }
+
+        .searchInput {
+            padding-right: 30px;
+            /* Espaçamento para o ícone */
+            /* Adicione outros estilos do campo de entrada conforme necessário */
+            margin-left: 20px;
+        }
+
+        .searchButton {
+            position: absolute;
+            bottom: 12px;
+            right: 4px;
+            /* Ajuste a posição conforme necessário */
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #botao-entrar:hover {
+            transition: background-color 1s !important;
+            background-color: darkgreen !important;
+            color: white !important;
+
+        }
+
+        body {
+            background-image: url(/Green_exchange/images/background2.jpg);
+        }
+
+        @media screen and (max-width: 768px) {
+            .searchInput {
+                margin-left: 0;
+            }
+        }
+
+        #carouselExampleControls2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #carouselExampleControls2 .carousel-inner .carousel-item {
+            width: 30%;
+        }
+
+        #carouselExampleControls3 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #carouselExampleControls3 .carousel-inner .carousel-item {
+            width: 30%;
+        }
+
+        #button-type {
+            background-color: yellowgreen;
+            color: black;
+        }
+
+    body{
+      background-image: url(/Green_exchange/images/7926585.jpg);
+    }
+ input[type="file"]{
+    display: none;
+ }
+    
+ label{
+        display: inline-block;
+        text-transform: uppercase;
+        color: black;
+        background: yellowgreen;
+    text-align: center;
+    padding: 15px 40px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    user-select: none;
+    margin-left: 18%;
+    margin-bottom: 5%;
+    border-radius: 40px;    
+}
+    
+.card-container {
+    margin-top: 10%;
+}
+
+.card {
+    background-color: rgba(0, 100, 0, 0.3);
+    border-radius: 15px;
+}
+
+.info-title {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    color: white;
+}
+
+.info-input {
+    display: none;
+    margin-bottom: 5px;
+}
+
+#edit-info-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#edit-info-icon:hover {
+    transform: scale(1.2);
+}
+
+.card-container {
+
+        .info-text {
+            display: inline-block;
+        }
+
+        .info-input {
+            width: 80%;
+            display: none;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .Calculadora {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #quantidades {
+            margin-top: 20px;
+        }
+
+        #quantidades p {
+            margin: 0;
+        }
+    }
+
+    @media screen {
+        
+    }
+    
+    
+    
+    </style>
+
+
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+    </div>
+
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+            <div class="container-fluid">
+               <a href="/index.html"> <img src="/Green_exchange/images/logo.png" alt="logo" width="70px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+                    aria-labelledby="offcanvasNavbar2Label">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label">GreenExchange</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <div class="navbar">
+                            <form class="search-form">
+                                <input class="searchInput" type="text" placeholder="Digite aqui">
+                                <button type="button" class="searchButton" id="barra-pesquisa">
+                                    <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png"
+                                        alt="Ícone de busca" style="width: 15px; height: 15px;;">
+                                </button>
+                            </form>
+                        </div>
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3"
+                            style="font-size: 20px; column-gap: 20px;">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Compra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Venda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Doação</a>
+                            </li>
+                        </ul>
+                        <a href="login.html"><button type="button" class="btn btn-secondary"
+                            style="background-color: yellowgreen; color: #000;"
+                            id="botao-entrar">Logar</button></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-4 text-start container">
+            <div class="row">
+                <div class="col-lg-5" style="font-weight: bol">
+                    <input type="file" id="imagemInput" name="imagem" accept="image/*" onchange="previewImagem()">
+                    <label for="imagemInput">Adicione a imagem aqui</label>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" id="carouselItem1">
+                                <img class="d-block w-100" src="#" alt="">
+                                <button class="btn btn-danger remove-image-btn" style="display: none;">Remover</button>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-5" style="margin-top: 10%;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <p>Nome do produto:</p>
+                                <h2 class="card-title info-title">
+                                    <span class="info-text">Microondas Eletrolux semi novo - Rua Amazonas 7990</span>
+                                    <input type="text" class="form-control info-input">
+                                </h2>
+                                <p class="card-text">Preço: <span class="info-text">Doação</span><input type="text" class="form-control info-input"></p>
+                                <p class="card-text">Disponibilidade: <span class="info-text">Em estoque</span><input type="text" class="form-control info-input"></p>
+                                <p class="card-text">Entrega estimada: <span class="info-text">A negociar</span><input type="text" class="form-control info-input"></p>
+                            </div>
+                            <div class="Calculadora">
+                                <select id="eletrodomestico" onchange="atualizarQuantidades()">
+                                    <option value="geladeira">Geladeira</option>
+                                    <option value="tv">TV</option>
+                                    <option value="maquina_lavar">Máquina de Lavar</option>
+                                </select>
+                                <div id="quantidades">
+                                    <p>Cobre: <span id="cobre">300 g</span></p>
+                                    <p>Ferro: <span id="ferro">400 g</span></p>
+                                    <p>Plástico: <span id="plastico">300 g</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="edit-info-icon" class="btn btn-secondary">
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                        <button id="save-changes-button" class="btn btn-success" style="display: none;">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <p class="float-end mb-1" style="margin-top: 15%;">
+                <a href="#" >Voltar ao Topo</a>
+            </p>
+            <p class="mb-1"></p>
+        </div>
+    </footer>
+  <SCript>
+    
+  </SCript>
+
+
+  <script>document.getElementById('edit-info-icon').addEventListener('click', function() {
+    var infoTextElements = document.querySelectorAll('.info-text');
+    var infoInputElements = document.querySelectorAll('.info-input');
+    
+    // Toggle visibility of input fields and text elements
+    infoTextElements.forEach(function(element) {
+        element.style.display = 'none';
+    });
+    infoInputElements.forEach(function(element) {
+        element.style.display = 'inline-block';
+    });
+    
+    // Show save button and hide edit icon
+    document.getElementById('save-changes-button').style.display = 'inline-block';
+    this.style.display = 'none';
+});
+
+// Add functionality to save the changes
+document.getElementById('save-changes-button').addEventListener('click', function() {
+    var infoTextElements = document.querySelectorAll('.info-text');
+    var infoInputElements = document.querySelectorAll('.info-input');
+    
+    // Update text elements with the input values
+    infoTextElements.forEach(function(element, index) {
+        element.textContent = infoInputElements[index].value;
+    });
+    
+    // Toggle visibility of input fields and text elements
+    infoTextElements.forEach(function(element) {
+        element.style.display = 'inline-block';
+    });
+    infoInputElements.forEach(function(element) {
+        element.style.display = 'none';
+    });
+    
+    // Hide save button and show edit icon
+    document.getElementById('edit-info-icon').style.display = 'inline-block';
+    this.style.display = 'none';
+});
+
+</script>
+  
+
+
+<script>
+  
+  function atualizarQuantidades() {
+    var eletrodomesticoSelecionado = document.getElementById("eletrodomestico").value;
+
+    var quantidadeCobre, quantidadeFerro, quantidadePlastico;
+
+    // Defina as quantidades em gramas com base no eletrodoméstico selecionado
+    switch (eletrodomesticoSelecionado) {
+      case "Microondas":
+        quantidadeCobre = 300;
+        quantidadeFerro = 400;
+        quantidadePlastico = 300;
+        break;
+      case "tv":
+        quantidadeCobre = 200;
+        quantidadeFerro = 500;
+        quantidadePlastico = 300;
+        break;
+      case "maquina_lavar":
+        quantidadeCobre = 250;
+        quantidadeFerro = 450;
+        quantidadePlastico = 300;
+        break;
+      default:
+        quantidadeCobre = 0;
+        quantidadeFerro = 0;
+        quantidadePlastico = 0;
+    }
+
+    // Atualize as quantidades exibidas
+    document.getElementById("cobre").innerText = quantidadeCobre + " g";
+    document.getElementById("ferro").innerText = quantidadeFerro + " g";
+    document.getElementById("plastico").innerText = quantidadePlastico + " g";
+  }
+
+  // Chame a função inicialmente para exibir as quantidades iniciais
+  atualizarQuantidades();
+
+</script>
+
+
+</script>  
+<script>
+    function previewImagem() {
+        var input = document.getElementById('imagemInput');
+        var carouselInner = document.querySelector('.carousel-inner');
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var newImage = document.createElement('img');
+            newImage.classList.add('d-block', 'w-100');
+            newImage.src = e.target.result;
+
+            var newCarouselItem = document.createElement('div');
+            newCarouselItem.classList.add('carousel-item');
+
+            // Adiciona um ID único para cada item do carrossel
+            newCarouselItem.id = 'carouselItem' + (carouselInner.childElementCount + 1);
+
+            newCarouselItem.appendChild(newImage);
+
+            // Adicione o botão "Remover"
+            var removeButton = document.createElement('button');
+            removeButton.classList.add('btn', 'btn-danger', 'remove-image-btn');
+            removeButton.textContent = 'Remover';
+            removeButton.addEventListener('click', function () {
+                // Chama a função removeImage() quando o botão "Remover" for clicado
+                removeImage(this);
+            });
+            newCarouselItem.appendChild(removeButton);
+
+            // Remove a classe 'active' de todos os itens do carrossel
+            var carouselItems = document.querySelectorAll('.carousel-item');
+            carouselItems.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            // Define o novo item como ativo
+            newCarouselItem.classList.add('active');
+
+            carouselInner.appendChild(newCarouselItem);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+        // Redimensionar a imagem após ser selecionada
+        var image = new Image();
+        image.src = URL.createObjectURL(input.files[0]);
+        image.onload = function () {
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(image, 0, 0);
+
+            var MAX_WIDTH = 600;
+            var MAX_HEIGHT = 600;
+            var width = image.width;
+            var height = image.height;
+                
+            if (width > MAX_WIDTH) {
+                    width = 600;
+                }
+                if (height > MAX_HEIGHT) {
+                    height = 300;
+                }
+            
+            canvas.width = width;
+            canvas.height = height;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(image, 0, 0, width, height);
+
+            var dataurl = canvas.toDataURL("image/png");
+            newImage.src = dataurl;
+        };
+    }
+
+    // Função para remover a imagem correspondente ao botão "Remover" clicado
+    function removeImage(button) {
+        var carouselItem = button.parentNode;
+        carouselItem.parentNode.removeChild(carouselItem);
+
+        // Limpar o valor do input de arquivo
+        var input = document.getElementById('imagemInput');
+        input.value = '';
+    }
+</script>
+
+    </script>
+ 
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="tema.js"></script>
+</body>
+
+</html>

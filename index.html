@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Navbar Template · Bootstrap v5.3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars-offcanvas/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(/Green_exchange/images/background1.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+
+        .btn-bd-primary::after {
+            content: none;
+        }
+
+        .navbar-dark {
+            background-color: transparent !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            transition: 0.5s;
+            color: yellowgreen !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+
+        .searchInput {
+            align-items: center;
+            width: 380px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #button-type:hover {
+            transition: background-color 1s;
+            background-color: darkgreen !important;
+            color: white !important;
+        }
+
+        #button-type2:hover {
+            color: darkgreen !important;
+        }
+
+        #button-type2 {
+            font-style: italic;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form {
+            display: flex;
+            position: relative;
+        }
+
+        .searchInput {
+            padding-right: 30px;
+            margin-left: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .searchInput {
+                margin-left: 0;
+            }
+        }
+
+        .searchButton {
+            position: absolute;
+            bottom: 12px;
+            right: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        #botao-entrar:hover {
+            transition: background-color 1s !important;
+            background-color: darkgreen !important;
+            color: white !important;
+        }
+
+        .botao-entrar{
+            text-decoration: none !important;
+        }
+
+        section {
+            background-image: url(/Green_exchange/images/natura.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            /* Ajuste a altura conforme necessário */
+        }
+
+        .passo:hover {
+            transition: background-color 1s !important;
+            background-color: darkgreen !important;
+        }
+    </style>
+
+    <link href="navbars-offcanvas.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+        <header data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+                <div class="container-fluid">
+                    <img src="/Green_exchange/images/logo.png" alt="logo" width="60px">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+                        aria-labelledby="offcanvasNavbar2Label">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">GreenExchange</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <div class="navbar">
+                                <form class="search-form">
+                                    <input class="searchInput" type="text" placeholder="Digite aqui">
+                                    <button type="submit" class="searchButton" id="barra-pesquisa">
+                                        <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png"
+                                            alt="Ícone de busca" style="width: 15px; height: 15px;">
+                                    </button>
+                                </form>
+                            </div>
+                            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3"
+                                style="font-size: 20px; column-gap: 20px;">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Compra</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Venda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Green_exchange/doacao/doacao.html">Doação</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="dvs.html">Devs</a>
+                                </li>
+                            </ul>
+                            
+                            <button style="display: none;"> teste </button>
+
+                            <a href="/Green_exchange/login/login.html" style="text-decoration: none;"> <button type="button-2" class="btn btn-secondary"
+                                style="background-color: yellowgreen; color: #000; display: block;"
+                             id="botao-entrar">Login</button></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+            <div class="titulo">
+                <h1 class="tittle"
+                    style="font-size: 60px; text-align: center; margin-top: 100px; color: white; text-shadow: 1px 1px rgb(126, 136, 105);">
+                    Seja
+                    bem vindo a GreenExchange!</h1>
+            </div>
+            <div class="container-info" style="text-align: center; align-items: center;">
+                <p>
+                    <button class="passo" style="align-items: center;
+                    width: 300px;
+                    border-radius: 20px;
+                    border: 1px solid darkgreen;
+                    padding: 10px;
+                    background-color: yellowgreen;
+                    color: white;
+                    margin-top: 20px;">Dê seu primeiro passo!</button>
+                </p>
+            </div>
+            <div class="container-info2"
+                style="text-align: center; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+                <h2 class="tittle"
+                    style="font-size: 55px;text-shadow: 1px 1px rgb(126, 136, 105); text-align: center; margin-top: 40px; color: white;">
+                    Quem
+                    somos?</h2>
+                <p
+                    style="width: 400px; text-align: center; color: white; text-shadow: 1px 1px rgb(126, 136, 105); font-weight: bold; font-size: 20px;">
+                    Desenvolvedores de uma plataforma inovadora chamada GreenExchange, dedicada à promoção da economia
+                    circular
+                    ao facilitar a troca, venda ou doação de itens usados. O principal propósito é incentivar a
+                    sustentabilidade, reduzindo o desperdício e promovendo a reutilização de produtos.
+                </p>
+            </div>
+            <br>
+            <br>
+            <br>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+        <br>
+        <br>
+        <br>
+      
+        <footer
+            style="background-color: transparent; color: white; align-items: center; text-align: center;  width: 100%;">
+            <p">&copy; GreenExchange; Desenvolvedores: Vinicius Friedrich Blau, Lucas Lorenço, Rael Henrique, Pedro,
+                Gustavo.</p>
+        </footer>
+    </main>
+    <script src="perfil.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
